@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- linkto bootstrap and css files-->
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style2.css">
+</head>
+<body>
+    <!-- link to jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- HTML elements -->
+    <nav>
+        <h1>GifTube</h1>
+        <form id="search-form">
+            <div class="input-group mb-3">
+                <input id="search-input" type="text" class="form-control" placeholder="Search GIPHY" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <input class="input-group-text" id="basic-addon2" type="submit" value="Search">
+                </div>
+            </div>
+        </form>
+    </nav>
+    <div class="container"></div>
+    <!-- javaScript -->
+    <script type="text/javascript">
+        //---------------when clicking search for Gif button----------------->
+        $("#basic-addon2").on("click", function(event) {
+            event.preventDefault();
+            // This line grabs the input from the textbox
+            var searchTerms = $("#search-input").val().trim();
+            // clearing previous search results
+            $(".container").empty();
+            // -----------AJAX CAll to giphy----------------->
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerms + "&api_key=Nmo83t2ddeUUrzIGVdPNOD5tQSWYwpLb";
+            $.ajax({
+            url: queryURL,
+            method: "GET"
+            }).then(function(response) {
+                var gifArray = response.data;
+                console.log(gifArray)
+                for(var i = 0; i < 11; i++){
+                    //creating picture card parent element...
+                    var pictureCard = $('<div>');
+                    pictureCard.attr("class", "pictureCard");
+                    //creating image child element...
+                    var image = $('<img>');
+                    image.attr("class", "collapsible");
+                    image.attr('src', gifArray[i].images.fixed_height.url);
+                    //creating gif info text child element...
+                    var infoText = $('<div>');
+                    infoText.attr("class", "content");
+                    infoText.append("Rated: " + gifArray[i].rating.toUpperCase());
+                    infoText.append(`<br>`);
+                    infoText.append(" Source: ");
+                    if(gifArray[i].source === "") {
+                        infoText.append("unavailable");
+                    } else {
+                        var sourceLink = $('<a>');
+                        sourceLink.attr("href", gifArray[i].source);
+                        sourceLink.append(gifArray[i].source);
+                        infoText.append(sourceLink); 
+                    };
+                    //buiding parent element and appending it to container...
+                    $(pictureCard).prepend(infoText)
+                    $(pictureCard).prepend(image);
+                    $('.container').prepend(pictureCard);
+                }
+                //calling function parent elements collapse/show click listener...
+                addColapseListeners();
+            });
+
+        });
+        function addColapseListeners() {
+            var coll = document.getElementsByClassName("collapsible");
+            for (let i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight){
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    };
+                });
+            };
+
+        };
+    </script>
+</body>
+</html>
