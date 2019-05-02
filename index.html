@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./style3.css">
     <!-- fonawesome link  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- link to jQuery mosaic plugin -->
     <script type="text/javascript" src="jquery.mosaic.js"></script>
     <link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
@@ -194,9 +194,9 @@
                         infoText.append(sourceLink); 
                     };
                     //building favorite button
-                    var favButton = $('<button>');
-                    favButton.text("add to favorites");
-                    favButton.attr("class", "favorites");
+                    var favButton = $('<br><button><i class="fas fa-star"></i></button>');
+                    // favButton.innerHTML = '<i class="fas fa-star"></i>';
+                    favButton.attr("class", "favorites btn btn-primary");
                     favButton.attr("id", gifArray[i].images.fixed_height.url);
 
                     infoText.append(favButton);
@@ -232,7 +232,7 @@
                     // var favParent = $('<div>')
                     // var favGif = $('<img>');
                     // favGif.attr("src", source);
-                    $('#favorite-links').append('<div><img src=' + source + '><button class="removebtn">x</button><div>');
+                    $('#favorite-links').append('<div><img src=' + source + '><button class="removebtn btn">x</button><div>');
                     // favParent.append(favGif);
                     // favParent.append('<')
 

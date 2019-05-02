@@ -40,3 +40,8 @@ nav{
     background: silver;
     padding: 10px;
 }
+.favorites{
+    display: inline-flex;
+    padding: 10px;
+    margin-bottom: 10px;
+}
