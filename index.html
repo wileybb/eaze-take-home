@@ -137,6 +137,14 @@
                             sourceLink.append(gifArray[i].source);
                             infoText.append(sourceLink); 
                         };
+
+                        //building favorite button
+                        var favButton = $('<br><button><i class="fas fa-star"></i></button>');
+                    // favButton.innerHTML = '<i class="fas fa-star"></i>';
+                        favButton.attr("class", "favorites2 btn btn-primary");
+                        favButton.attr("id", gifArray[i].images.fixed_height.url);
+
+                        infoText.append(favButton);
                         //buiding parent element and appending it to container...
                         $(pictureCard).prepend(infoText);
                         // $(pictureCard).prepend(placeholder);
@@ -146,6 +154,7 @@
 
                     //calling function collapse/show click listener...
                     addColapseListeners2();
+                    addFavListeners2();
                     //calling mosaic plugin to build mosaic...
                     $('#mosaic').Mosaic();
                 }
@@ -179,6 +188,9 @@
                     // placeholder.attr("class", "placeholder");
                     // placeholder.attr("src", './assets/image-loader.gif');
                     // creating gif info text child element...
+                    
+
+
                     var infoText = $('<div>');
                     infoText.attr("class", "content");
                     infoText.append("Rated: " + gifArray[i].rating.toUpperCase());
@@ -224,27 +236,25 @@
             for (let i = 0; i < fav.length; i++) {
                 fav[i].addEventListener("click", function() {
                     console.log("fav clicked");
-
                     source = this.id;
-
                     console.log(source);
-                    // $('#favorite-links').append('<img src = >'+favText+'<button class="removebtn">x</button></li>');
-                    // var favParent = $('<div>')
-                    // var favGif = $('<img>');
-                    // favGif.attr("src", source);
                     $('#favorite-links').append('<div><img src=' + source + '><button class="removebtn btn">x</button><div>');
-                    // favParent.append(favGif);
-                    // favParent.append('<')
-
                     var $ul = $('#favorite-links');
-                    
-                    // $('#favorite-links').append('<li><a href="'+$url.val()+'">'+favText+'</a><button class="removebtn">x</button></li>');
-                    
-                    //save changes to localstorage
                     localStorage.setItem('vk-links', $ul.html());
-                    
-                    
+                })
+            }
+        }
 
+        function addFavListeners2() {
+            var fav = document.getElementsByClassName("favorites2");
+            for (let i = 0; i < fav.length; i++) {
+                fav[i].addEventListener("click", function() {
+                    console.log("fav clicked");
+                    source = this.id;
+                    console.log(source);
+                    $('#favorite-links').append('<div><img src=' + source + '><button class="removebtn btn">x</button><div>');
+                    var $ul = $('#favorite-links');
+                    localStorage.setItem('vk-links', $ul.html());
                 })
             }
         }
@@ -295,6 +305,8 @@
                 $('.cart-drawer-push').toggleClass('cart-drawer-pushtoleft');
                 $drawerRight.toggleClass('cart-drawer-open');
             });
+
+
         });
 
     </script>
