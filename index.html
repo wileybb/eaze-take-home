@@ -238,7 +238,7 @@
                     console.log("fav clicked");
                     source = this.id;
                     console.log(source);
-                    $('#favorite-links').append('<div><img src=' + source + '><button class="removebtn btn">x</button><div>');
+                    $('#favorite-links').append('<div><img class="favoritedGif" src=' + source + '><button class="removebtn btn">x</button><div>');
                     var $ul = $('#favorite-links');
                     localStorage.setItem('vk-links', $ul.html());
                 })
@@ -252,7 +252,7 @@
                     console.log("fav clicked");
                     source = this.id;
                     console.log(source);
-                    $('#favorite-links').append('<div><img src=' + source + '><button class="removebtn btn">x</button><div>');
+                    $('#favorite-links').append('<div><img class="favoritedGif" src=' + source + '><button class="removebtn btn">x</button><div>');
                     var $ul = $('#favorite-links');
                     localStorage.setItem('vk-links', $ul.html());
                 })

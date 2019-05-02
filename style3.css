@@ -53,6 +53,7 @@ svg {display: block;}
 	width: 300px;
 	padding: 20px;
 	overflow-y: auto;
+	z-index: 10;
 
 }
 
