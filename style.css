@@ -6,7 +6,18 @@
   width: 100%;
   font-size: 15px;
 }
+.collapsible2 {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+  font-size: 15px;
+}
 .active, .collapsible:hover {
+  background-color: #555;
+}
+.active, .collapsible2:hover {
   background-color: #555;
 }
 .content {
@@ -23,9 +34,16 @@
   background-position: center;
   margin: 20px 20px;
 }
+#mosaic {
+  padding-bottom: 50px;
+}
 img {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 } 
+.placeholder {
+  display: block;
+  position: absolute;
+}
 form{
   text-align: center;
   width: 50%;
@@ -76,5 +94,15 @@ form{
     width: 90%;
   }
 }
-  
+.list li {
+  cursor: pointer;
+}
+.list li:hover:after,
+.list li.fav:after {
+  content: ' \2605';
+  color: rgb(255, 203, 0);
+}
+.list li.fav:hover:after {
+  content: ' \2606';
+}
   

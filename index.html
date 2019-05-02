@@ -7,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./style2.css">
+    <!-- link to jQuery mosaic plugin -->
+    <script type="text/javascript" src="jquery.mosaic.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.mosaic.css" />
 </head>
 <body>
     <!-- link to jQuery -->
@@ -22,24 +25,107 @@
                 </div>
             </div>
         </form>
+        <div id="favorite-links">
+
+        </div>
     </nav>
-    <div class="container"></div>
+    <div 
+        class="list"
+        id="mosaic">
+    </div>
+
     <!-- javaScript -->
     <script type="text/javascript">
+
+        $(document).ready(function() {
+            var $ul = $('#favorite-links');
+            var $title = $('#title');
+            var $url = $('#url');
+            
+            //get items from local storage
+            if(localStorage.getItem('vk-links')){
+                $ul.html(localStorage.getItem('vk-links'));
+            }
+            
+            //remove item
+            $("#favorite-links").on('click','.removebtn',function() {
+                $(this).parent().remove();
+                //save changes to localstorage
+                var $ul = $('#favorite-links');
+                localStorage.setItem('vk-links', $ul.html());
+            });
+        
+        });
+
+        //===========================================>>>>>>>>>>>>>>>
+        //declaring gifArray globally
+        let gifArray = "";
+        //creating flag
+        let scrolled = false;
+        //function to load more gifs when user hits bottom of page
+        $(window).on("scroll", function() {
+     
+                var scrollHeight = $(document).height();
+                var scrollPosition = $(window).height() + $(window).scrollTop();
+                if ((scrollHeight - scrollPosition) / scrollHeight === 0 && scrolled === false) {
+                    console.log("you are at the bottom of the page" + scrolled);
+                    scrolled = true;
+                    console.log(scrolled);
+                    for(var i = 11; i < 25; i++){
+                        //creating picture card parent element...
+                        var pictureCard = $('<div>');
+                        pictureCard.attr("class", "pictureCard");
+                        //creating image child element...
+                        var image = $('<img>');
+                        image.attr("class", "collapsible2");
+                        image.attr('src', gifArray[i].images.fixed_height.url);
+                        // creating place holder image element
+                        // var placeholder = $('<img>');
+                        // placeholder.attr("class", "placeholder");
+                        // placeholder.attr("src", './assets/image-loader.gif');
+                        // creating gif info text child element...
+                        var infoText = $('<div>');
+                        infoText.attr("class", "content");
+                        infoText.append("Rated: " + gifArray[i].rating.toUpperCase());
+                        infoText.append(`<br>`);
+                        infoText.append(" Source: ");
+                        if(gifArray[i].source === "") {
+                            infoText.append("unavailable");
+                        } else {
+                            var sourceLink = $('<a>');
+                            sourceLink.attr("href", gifArray[i].source);
+                            sourceLink.attr("target", "_blank");
+                            sourceLink.append(gifArray[i].source);
+                            infoText.append(sourceLink); 
+                        };
+                        //buiding parent element and appending it to container...
+                        $(pictureCard).prepend(infoText);
+                        // $(pictureCard).prepend(placeholder);
+                        $(pictureCard).prepend(image);
+                        $('#mosaic').append(pictureCard);
+                    }
+
+                    //calling function collapse/show click listener...
+                    addColapseListeners2();
+                    //calling mosaic plugin to build mosaic...
+                    $('#mosaic').Mosaic();
+                }
+        });
         //---------------when clicking search for Gif button----------------->
         $("#basic-addon2").on("click", function(event) {
             event.preventDefault();
+            scrolled = false;
             // This line grabs the input from the textbox
             var searchTerms = $("#search-input").val().trim();
             // clearing previous search results
-            $(".container").empty();
+            $("#mosaic").empty();
             // -----------AJAX CAll to giphy----------------->
             var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerms + "&api_key=Nmo83t2ddeUUrzIGVdPNOD5tQSWYwpLb";
             $.ajax({
             url: queryURL,
             method: "GET"
             }).then(function(response) {
-                var gifArray = response.data;
+                gifArray = response.data;
                 console.log(gifArray)
                 for(var i = 0; i < 11; i++){
                     //creating picture card parent element...
@@ -49,7 +135,11 @@
                     var image = $('<img>');
                     image.attr("class", "collapsible");
                     image.attr('src', gifArray[i].images.fixed_height.url);
-                    //creating gif info text child element...
+                    // creating place holder image element
+                    // var placeholder = $('<img>');
+                    // placeholder.attr("class", "placeholder");
+                    // placeholder.attr("src", './assets/image-loader.gif');
+                    // creating gif info text child element...
                     var infoText = $('<div>');
                     infoText.attr("class", "content");
                     infoText.append("Rated: " + gifArray[i].rating.toUpperCase());
@@ -60,23 +150,72 @@
                     } else {
                         var sourceLink = $('<a>');
                         sourceLink.attr("href", gifArray[i].source);
+                        sourceLink.attr("target", "_blank");
                         sourceLink.append(gifArray[i].source);
                         infoText.append(sourceLink); 
                     };
+                    //building favorite button
+                    var favButton = $('<button>');
+                    favButton.text("add to favorites");
+                    favButton.attr("class", "favorites");
+                    favButton.attr("id", gifArray[i].images.fixed_height.url);
+
+                    infoText.append(favButton);
                     //buiding parent element and appending it to container...
-                    $(pictureCard).prepend(infoText)
+                    $(pictureCard).prepend(infoText);
+
+                    $(pictureCard).attr("id", i);
+
                     $(pictureCard).prepend(image);
-                    $('.container').prepend(pictureCard);
+                    $('#mosaic').prepend(pictureCard);
                 }
                 //calling function parent elements collapse/show click listener...
                 addColapseListeners();
-            });
+                addFavListeners();
+             
+                //calling mosaic plugin to build mosaic...
+                $('#mosaic').Mosaic();
+            })
 
         });
+
+        
+        function addFavListeners() {
+            var fav = document.getElementsByClassName("favorites");
+            for (let i = 0; i < fav.length; i++) {
+                fav[i].addEventListener("click", function() {
+                    console.log("fav clicked");
+
+                    source = this.id;
+
+                    console.log(source);
+                    // $('#favorite-links').append('<img src = >'+favText+'<button class="removebtn">x</button></li>');
+                    // var favParent = $('<div>')
+                    // var favGif = $('<img>');
+                    // favGif.attr("src", source);
+                    $('#favorite-links').append('<div><img src=' + source + '><button class="removebtn">x</button><div>');
+                    // favParent.append(favGif);
+                    // favParent.append('<')
+
+                    var $ul = $('#favorite-links');
+                    
+                    // $('#favorite-links').append('<li><a href="'+$url.val()+'">'+favText+'</a><button class="removebtn">x</button></li>');
+                    
+                    //save changes to localstorage
+                    localStorage.setItem('vk-links', $ul.html());
+                    
+                    
+
+                })
+            }
+        }
+
         function addColapseListeners() {
             var coll = document.getElementsByClassName("collapsible");
             for (let i = 0; i < coll.length; i++) {
+                // coll[i].removeEventListener("click");    
                 coll[i].addEventListener("click", function() {
+                    
                     this.classList.toggle("active");
                     var content = this.nextElementSibling;
                     if (content.style.maxHeight){
@@ -88,6 +227,24 @@
             };
 
         };
+        function addColapseListeners2() {
+            var coll = document.getElementsByClassName("collapsible2");
+            for (let i = 0; i < coll.length; i++) {
+                // coll[i].removeEventListener("click");    
+                coll[i].addEventListener("click", function() {
+                    
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight){
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    };
+                });
+            };
+
+        };
+
     </script>
 </body>
 </html>
