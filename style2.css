@@ -53,3 +53,101 @@ nav{
 .favoritedGif{
     margin: 8px;
 }
+body { 
+
+
+
+	line-height: 1;
+	margin: 0;
+}
+
+html {box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit;}
+
+svg {display: block;}
+
+.heading {
+	background: #282828;
+	text-align: center;
+}
+
+.heading h1 {
+	font-size: 28px;
+	font-weight: 600;
+	margin: 0;
+	padding: 24px 0 6px;
+}
+
+.heading h2 {
+	font-size: 16px;
+	font-weight: 300;
+	margin: 0;
+	padding: 6px 0 30px;
+}
+
+.main {
+	border-radius: 25px;
+	padding: 20px 20px 20px;
+	position: relative;
+	text-align: right;
+}
+
+.cart-drawer-push {
+	overflow-x: hidden;
+	position: relative;
+	right: 0;
+}
+
+.cart-drawer {
+	background: #444;
+  	height: 100%;
+  	position: fixed;
+	text-align: center;
+	top: 0;
+	width: 300px;
+	padding: 20px;
+	overflow-y: auto;
+	z-index: 10;
+
+}
+
+
+.cart-drawer-right { right: -300px; }
+
+.cart-drawer-right.cart-drawer-open { right: 0; }
+
+.cart-drawer-pushtoleft { right: 300px; }
+
+.cart-drawer, .cart-drawer-push {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.cart-btn {
+	cursor: pointer;
+	font-size: 30px;
+	border-radius: 50%;
+	transition: all .5s ease;
+	height: 50px;
+	width: 50px;
+}
+
+.close-btn {
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 58px;
+    top: 25px;
+}
+.fa {
+	border-radius: 50%;
+	transition: all 1s ease;
+
+}

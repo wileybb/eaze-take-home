@@ -4,11 +4,9 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- link to bootstrap and CSS files-->
-    
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./style2.css">
-    <link rel="stylesheet" type="text/css" href="./style3.css">
     <!-- fonawesome link  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -21,26 +19,22 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- HTML elements -->
     <nav>
-       
-                <div class="cart-btn">
-                        <svg version="1.1" class="arrow-icon" x="0px" y="0px"
-                        width="43.737px" height="20px" viewBox="91.602 355.81 43.737 20" enable-background="new 91.602 355.81 43.737 20"
-                        xml:space="preserve">
-                        <path fill="#FFFFFF" d="M135.271,367.059l0.003-0.004c0,0-0.004-0.011-0.013-0.031c-0.013-0.034-0.031-0.066-0.047-0.099
-                        c-0.036-0.071-0.089-0.165-0.167-0.278c-0.087-0.152-0.193-0.288-0.323-0.398c-0.134-0.142-0.297-0.291-0.496-0.438
-                        c-0.812-0.601-2.354-1.611-2.354-1.611l-0.003,0.002c-4.075-3.042-8.143-5.811-12.747-8.236c-1.404-0.739-2.59,1.368-1.203,2.157
-                        c3.747,2.133,7.099,4.48,10.398,7.033c-5.68-0.152-11.391,0.137-17.049,0.524c-3.574,0.244-7.146,0.567-10.707,0.949
-                        c-2.722,0.292-5.863,0.299-8.465,1.171c-0.756,0.253-0.616,1.331,0.185,1.374c2.904,0.157,6.049-0.513,8.961-0.709
-                        c3.465-0.232,6.933-0.389,10.403-0.516c5.564-0.203,11.163-0.353,16.731-0.064c-4.195,1.61-8.221,3.378-12.263,5.646
-                        c-1.393,0.782-0.148,2.855,1.255,2.127c5.506-2.858,10.946-4.785,16.846-6.652c0.605-0.192,0.928-0.63,1.032-1.117
-                        C135.352,367.62,135.365,367.333,135.271,367.059z"/>
-                        </svg><!-- /.arrow-icon -->
-                </div><!-- /.cart-btn -->
-
+        <div class="cart-btn">
+            <svg version="1.1" class="arrow-icon" x="0px" y="0px"
+            width="43.737px" height="20px" viewBox="91.602 355.81 43.737 20" enable-background="new 91.602 355.81 43.737 20"
+            xml:space="preserve">
+            <path fill="#FFFFFF" d="M135.271,367.059l0.003-0.004c0,0-0.004-0.011-0.013-0.031c-0.013-0.034-0.031-0.066-0.047-0.099
+            c-0.036-0.071-0.089-0.165-0.167-0.278c-0.087-0.152-0.193-0.288-0.323-0.398c-0.134-0.142-0.297-0.291-0.496-0.438
+            c-0.812-0.601-2.354-1.611-2.354-1.611l-0.003,0.002c-4.075-3.042-8.143-5.811-12.747-8.236c-1.404-0.739-2.59,1.368-1.203,2.157
+            c3.747,2.133,7.099,4.48,10.398,7.033c-5.68-0.152-11.391,0.137-17.049,0.524c-3.574,0.244-7.146,0.567-10.707,0.949
+            c-2.722,0.292-5.863,0.299-8.465,1.171c-0.756,0.253-0.616,1.331,0.185,1.374c2.904,0.157,6.049-0.513,8.961-0.709
+            c3.465-0.232,6.933-0.389,10.403-0.516c5.564-0.203,11.163-0.353,16.731-0.064c-4.195,1.61-8.221,3.378-12.263,5.646
+            c-1.393,0.782-0.148,2.855,1.255,2.127c5.506-2.858,10.946-4.785,16.846-6.652c0.605-0.192,0.928-0.63,1.032-1.117
+            C135.352,367.62,135.365,367.333,135.271,367.059z"/>
+            </svg><!-- /.arrow-icon -->
+        </div><!-- /.drawer-btn -->
         <h1>GifTube</h1>
-
         <form id="search-form">
-
             <div class="input-group mb-3">
                 <input id="search-input" type="text" class="form-control" placeholder="Search Giphy..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
@@ -48,149 +42,61 @@
                 </div>
             </div>
         </form>
-
-    </nav>
-    
-        
-        <div class="cart-drawer cart-drawer-right"> 
-            <span>Your Favorites</span>
-            <div class="close-btn">
-                <svg version="1.1" class="close-icon" x="0px" y="0px"
-                     width="18px" height="18px" viewBox="312 387 18 18" enable-background="new 312 387 18 18" xml:space="preserve">
-                    <path fill="#E55959" d="M312.54,404.46c0.36,0.36,0.84,0.54,1.26,0.54c0.42,0,0.9-0.18,1.26-0.54l5.94-5.94l5.94,5.94
-                    c0.36,0.36,0.84,0.54,1.26,0.54c0.42,0,0.9-0.18,1.26-0.54c0.72-0.72,0.72-1.86,0-2.52l-5.94-5.94l5.94-5.94
-                    c0.72-0.72,0.72-1.86,0-2.52c-0.72-0.72-1.86-0.72-2.52,0l-5.94,5.94l-5.94-5.94c-0.72-0.72-1.86-0.72-2.52,0
-                    c-0.72,0.72-0.72,1.86,0,2.52l5.94,5.94l-5.94,5.94C311.82,402.66,311.82,403.8,312.54,404.46z"/>
-                </svg><!-- /.close-icon -->
-            </div><!-- /.close-btn -->
-            <div id="favorite-links">
-
-            </div>
-        </div><!-- /.cart-drawer .cart-drawer-right -->
-    </div><!-- /.container --> 
-    <div 
-        class="list"
-        id="mosaic">
+    </nav>        
+    <div class="cart-drawer cart-drawer-right"> 
+        <span>Your Favorites</span>
+        <div class="close-btn">
+            <svg version="1.1" class="close-icon" x="0px" y="0px"
+                width="18px" height="18px" viewBox="312 387 18 18" enable-background="new 312 387 18 18" xml:space="preserve">
+                <path fill="#E55959" d="M312.54,404.46c0.36,0.36,0.84,0.54,1.26,0.54c0.42,0,0.9-0.18,1.26-0.54l5.94-5.94l5.94,5.94
+                c0.36,0.36,0.84,0.54,1.26,0.54c0.42,0,0.9-0.18,1.26-0.54c0.72-0.72,0.72-1.86,0-2.52l-5.94-5.94l5.94-5.94
+                c0.72-0.72,0.72-1.86,0-2.52c-0.72-0.72-1.86-0.72-2.52,0l-5.94,5.94l-5.94-5.94c-0.72-0.72-1.86-0.72-2.52,0
+                c-0.72,0.72-0.72,1.86,0,2.52l5.94,5.94l-5.94,5.94C311.82,402.66,311.82,403.8,312.54,404.46z"/>
+            </svg><!-- /.close-icon -->
+        </div><!-- /.close-btn -->
+        <div id="favorite-links">
+        </div>
     </div>
-
+    <div class="list" id="mosaic"></div>
     <!-- javaScript -->
     <script type="text/javascript">
-
         $(document).ready(function() {
             var $ul = $('#favorite-links');
             var $title = $('#title');
             var $url = $('#url');
-            
             //get items from local storage
             if(localStorage.getItem('vk-links')){
                 $ul.html(localStorage.getItem('vk-links'));
-            }
-            
-            //remove item
+            };
+            //remove item from favorites
             $("#favorite-links").on('click','.removebtn',function() {
                 $(this).parent().remove();
                 //save changes to localstorage
                 var $ul = $('#favorite-links');
                 localStorage.setItem('vk-links', $ul.html());
             });
-        
         });
-
-        //===========================================>>>>>>>>>>>>>>>
         //declaring gifArray globally
         let gifArray = "";
-        //creating flag
+        //creating scrolled flag
         let scrolled = false;
         //function to load more gifs when user hits bottom of page
         $(window).on("scroll", function() {
-     
-                var scrollHeight = $(document).height();
-                var scrollPosition = $(window).height() + $(window).scrollTop();
-                if ((scrollHeight - scrollPosition) / scrollHeight === 0 && scrolled === false) {
-                    console.log("you are at the bottom of the page" + scrolled);
-                    scrolled = true;
-                    console.log(scrolled);
-                    for(var i = 11; i < 25; i++){
-                        //creating picture card parent element...
-                        var pictureCard = $('<div>');
-                        pictureCard.attr("class", "pictureCard");
-                        //creating image child element...
-                        var image = $('<img>');
-                        image.attr("class", "collapsible2");
-                        image.attr('src', gifArray[i].images.fixed_height.url);
-                        // creating place holder image element
-                        // var placeholder = $('<img>');
-                        // placeholder.attr("class", "placeholder");
-                        // placeholder.attr("src", './assets/image-loader.gif');
-                        // creating gif info text child element...
-                        var infoText = $('<div>');
-                        infoText.attr("class", "content");
-                        infoText.append("Rated: " + gifArray[i].rating.toUpperCase());
-                        infoText.append(`<br>`);
-                        infoText.append(" Source: ");
-                        if(gifArray[i].source === "") {
-                            infoText.append("unavailable");
-                        } else {
-                            var sourceLink = $('<a>');
-                            sourceLink.attr("href", gifArray[i].source);
-                            sourceLink.attr("target", "_blank");
-                            sourceLink.append(gifArray[i].source);
-                            infoText.append(sourceLink); 
-                        };
-
-                        //building favorite button
-                        var favButton = $('<br><button><i class="fas fa-star"></i></button>');
-                    // favButton.innerHTML = '<i class="fas fa-star"></i>';
-                        favButton.attr("class", "favorites2 btn btn-primary");
-                        favButton.attr("id", gifArray[i].images.fixed_height.url);
-
-                        infoText.append(favButton);
-                        //buiding parent element and appending it to container...
-                        $(pictureCard).prepend(infoText);
-                        // $(pictureCard).prepend(placeholder);
-                        $(pictureCard).prepend(image);
-                        $('#mosaic').append(pictureCard);
-                    }
-
-                    //calling function collapse/show click listener...
-                    addColapseListeners2();
-                    addFavListeners2();
-                    //calling mosaic plugin to build mosaic...
-                    $('#mosaic').Mosaic();
-                }
-        });
-        //---------------when clicking search for Gif button----------------->
-        $("#basic-addon2").on("click", function(event) {
-            event.preventDefault();
-            scrolled = false;
-            // This line grabs the input from the textbox
-            var searchTerms = $("#search-input").val().trim();
-            // clearing previous search results
-            $("#mosaic").empty();
-            // -----------AJAX CAll to giphy----------------->
-            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerms + "&api_key=Nmo83t2ddeUUrzIGVdPNOD5tQSWYwpLb";
-            $.ajax({
-            url: queryURL,
-            method: "GET"
-            }).then(function(response) {
-                gifArray = response.data;
-                console.log(gifArray)
-                for(var i = 0; i < 11; i++){
-                    //creating picture card parent element...
+            var scrollHeight = $(document).height();
+            var scrollPosition = $(window).height() + $(window).scrollTop();
+            if ((scrollHeight - scrollPosition) / scrollHeight === 0 && scrolled === false) {
+                console.log("you are at the bottom of the page" + scrolled);
+                scrolled = true;
+                console.log(scrolled);
+                for(var i = 11; i < 25; i++){
+                    //creating picture card parent element
                     var pictureCard = $('<div>');
                     pictureCard.attr("class", "pictureCard");
-                    //creating image child element...
+                    //creating image child element
                     var image = $('<img>');
-                    image.attr("class", "collapsible");
+                    image.attr("class", "collapsible2");
                     image.attr('src', gifArray[i].images.fixed_height.url);
-                    // creating place holder image element
-                    // var placeholder = $('<img>');
-                    // placeholder.attr("class", "placeholder");
-                    // placeholder.attr("src", './assets/image-loader.gif');
-                    // creating gif info text child element...
-                    
-
-
+                    //creating drop down box
                     var infoText = $('<div>');
                     infoText.attr("class", "content");
                     infoText.append("Rated: " + gifArray[i].rating.toUpperCase());
@@ -207,30 +113,75 @@
                     };
                     //building favorite button
                     var favButton = $('<br><button><i class="fas fa-star"></i></button>');
-                    // favButton.innerHTML = '<i class="fas fa-star"></i>';
-                    favButton.attr("class", "favorites btn btn-primary");
+                    favButton.attr("class", "favorites2 btn btn-primary");
                     favButton.attr("id", gifArray[i].images.fixed_height.url);
-
                     infoText.append(favButton);
                     //buiding parent element and appending it to container...
                     $(pictureCard).prepend(infoText);
+                    // $(pictureCard).prepend(placeholder);
+                    $(pictureCard).prepend(image);
+                    $('#mosaic').append(pictureCard);
+                }
 
+                //calling function collapse/favorite click listeners
+                addColapseListeners2();
+                addFavListeners2();
+
+            }
+        });
+        //---------------when clicking search button----------------->
+        $("#basic-addon2").on("click", function(event) {
+            event.preventDefault();
+            scrolled = false;
+            // This line grabs the input from the textbox
+            var searchTerms = $("#search-input").val().trim();
+            // clearing previous search results
+            $("#mosaic").empty();
+            // -----------AJAX CAll to giphy----------------->
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerms + "&api_key=Nmo83t2ddeUUrzIGVdPNOD5tQSWYwpLb";
+            $.ajax({
+            url: queryURL,
+            method: "GET"
+            }).then(function(response) {
+                gifArray = response.data;
+                for(var i = 0; i < 11; i++){
+                    //creating picture card parent element
+                    var pictureCard = $('<div>');
+                    pictureCard.attr("class", "pictureCard");
+                    //creating image child element
+                    var image = $('<img>');
+                    image.attr("class", "collapsible");
+                    image.attr('src', gifArray[i].images.fixed_height.url);
+                    var infoText = $('<div>');
+                    infoText.attr("class", "content");
+                    infoText.append("Rated: " + gifArray[i].rating.toUpperCase());
+                    infoText.append(`<br>`);
+                    infoText.append(" Source: ");
+                    if(gifArray[i].source === "") {
+                        infoText.append("unavailable");
+                    } else {
+                        var sourceLink = $('<a>');
+                        sourceLink.attr("href", gifArray[i].source);
+                        sourceLink.attr("target", "_blank");
+                        sourceLink.append(gifArray[i].source);
+                        infoText.append(sourceLink); 
+                    };
+                    //building favorite button
+                    var favButton = $('<br><button><i class="fas fa-star"></i></button>');
+                    favButton.attr("class", "favorites btn btn-primary");
+                    favButton.attr("id", gifArray[i].images.fixed_height.url);
+                    infoText.append(favButton);
+                    //buiding picture card element and appending it to container
+                    $(pictureCard).prepend(infoText);
                     $(pictureCard).attr("id", i);
-
                     $(pictureCard).prepend(image);
                     $('#mosaic').prepend(pictureCard);
-                }
-                //calling function parent elements collapse/show click listener...
+                };
+                //calling functions to add collapse/favorite click listeners
                 addColapseListeners();
                 addFavListeners();
-             
-                //calling mosaic plugin to build mosaic...
-                $('#mosaic').Mosaic();
-            })
-
+            });
         });
-
-        
         function addFavListeners() {
             var fav = document.getElementsByClassName("favorites");
             for (let i = 0; i < fav.length; i++) {
@@ -244,7 +195,6 @@
                 })
             }
         }
-
         function addFavListeners2() {
             var fav = document.getElementsByClassName("favorites2");
             for (let i = 0; i < fav.length; i++) {
@@ -258,7 +208,6 @@
                 })
             }
         }
-
         function addColapseListeners() {
             var coll = document.getElementsByClassName("collapsible");
             for (let i = 0; i < coll.length; i++) {
@@ -293,22 +242,17 @@
             };
 
         };
-
     </script>
     <script type="text/javascript">
         $(document).ready(function() {
             $drawerRight = $('.cart-drawer-right');
             $cart_list = $('.cart-btn, .close-btn');
-            
             $cart_list.click(function() {
                 // $(this).toggleClass('active');
                 $('.cart-drawer-push').toggleClass('cart-drawer-pushtoleft');
                 $drawerRight.toggleClass('cart-drawer-open');
             });
-
-
         });
-
     </script>
 </body>
 </html>
