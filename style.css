@@ -106,4 +106,137 @@ form{
 .list li.fav:hover:after {
   content: ' \2606';
 }
-  
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: lavender;
+}
+h1{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: black;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+h2{
+  text-align: center;
+  position: relative;
+  top: 40px;
+}
+h3{
+  color: gray;
+  text-align: left;
+  position: relative;
+  bottom: 30px;
+  left: 40px;
+}
+nav{
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: relative;
+  padding-left: 50px;
+  padding-right: 100px;
+  background: silver;
+  padding: 10px;
+}
+.favorites{
+  display: inline-flex;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.favorites2{
+  display: inline-flex;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.favoritedGif{
+  margin: 8px;
+}
+
+html {box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit;}
+
+svg {display: block;}
+
+.heading {
+  background: #282828;
+  text-align: center;
+}
+.heading h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  padding: 24px 0 6px;
+}
+.heading h2 {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  padding: 6px 0 30px;
+}
+.main {
+  border-radius: 25px;
+  padding: 20px 20px 20px;
+  position: relative;
+  text-align: right;
+}
+.cart-drawer-push {
+  overflow-x: hidden;
+  position: relative;
+  right: 0;
+}
+.cart-drawer {
+  background: #444;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 300px;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.cart-drawer-right { right: -300px; }
+
+.cart-drawer-right.cart-drawer-open { right: 0; }
+
+.cart-drawer-pushtoleft { right: 300px; }
+
+.cart-drawer, .cart-drawer-push {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.cart-btn {
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 50%;
+  transition: all .5s ease;
+  height: 50px;
+  width: 50px;
+}
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.arrow-icon {
+  position: absolute;
+  right: 58px;
+  top: 25px;
+}
+.fa {
+  border-radius: 50%;
+  transition: all 1s ease;
+}
